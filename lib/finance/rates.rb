@@ -158,6 +158,7 @@ module Finance
       if periods.infinite?
         (rate + 1).log
       else
+        periods = periods.to_f
         periods * ((1 + rate) ** (1 / periods) - 1)
       end
     end
